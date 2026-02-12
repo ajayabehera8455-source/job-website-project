@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Now</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #ff512f, #dd2476, #24c6dc, #5433ff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.form-container {
+    background: rgba(255,255,255,0.2);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    width: 350px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+.success-message {
+    display: none;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #00ffcc;
+}
+</style>
+
+</head>
+<body>
+
+<div class="form-container">
+<h2>Apply for Job</h2>
+
+<form id="jobForm">
+<input type="text" placeholder="Full Name" required>
+<input type="tel" placeholder="Contact Number" required>
+<input type="email" placeholder="Email Address" required>
+
+<select required>
+<option value="">Select Position</option>
+<option>AI / ML Engineer</option>
+<option>Data Analyst</option>
+<option>Business Analyst</option>
+<option>Digital Marketing</option>
+<option>Software Developer</option>
+</select>
+
+<button type="submit">Submit Application</button>
+</form>
+
+<p class="success-message" id="successMsg">
+✅ Application Submitted Successfully!
+</p>
+
+</div>
+
+<script>
+document.getElementById("jobForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent page reload
+    
+    document.getElementById("successMsg").style.display = "block";
+    
+    this.reset(); // clear form after submit
+});
+</script>
+
+</body>
+</html>
